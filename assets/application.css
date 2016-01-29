@@ -1,0 +1,490 @@
+* {
+list-style:none;
+text-decoration:none;
+border:none;
+outline:none;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+-webkit-appearance:none;
+margin:0;
+padding:0;
+}
+
+html,body {
+position:relative;
+height:100%;
+}
+
+a {
+    text-decoration: underline;
+}
+
+body {
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+background:#E65069;
+}
+
+.inner {
+padding:64px;
+}
+
+.clear {
+clear:both;
+}
+
+.content {
+max-width:480px;
+margin:0 auto;
+}
+
+#side {
+width:100%;
+height:75%;
+position:relative;
+}
+
+#side .content {
+display:table;
+height:100%;
+}
+
+#side .text {
+display:table-cell;
+vertical-align:middle;
+}
+
+#side #logo {
+width:64px;
+margin:0 0 0 -12px;
+}
+
+#side h2 {
+font-size:32px;
+line-height:36px;
+font-weight:300;
+color:#FAF7F5;
+margin-bottom:24px;
+}
+
+.buttons {
+font-size:0;
+}
+
+.buttons li {
+height:32px;
+border-radius:3px;
+display:inline-block;
+margin-right:16px;
+vertical-align:top;
+}
+
+.buttons li a {
+display:block;
+width:100%;
+height:100%;
+color:inherit;
+font-size:12px;
+line-height:32px;
+letter-spacing:1px;
+text-transform:uppercase;
+font-weight:600;
+padding:0 24px;
+}
+
+.buttons li.fill {
+background:#FAF7F5;
+color:#E65069;
+}
+
+.buttons li.border {
+border:1px solid #FAF7F5;
+color:#FAF7F5;
+}
+
+.stripe {
+border-right:0 solid transparent;
+border-bottom:0 solid #FAF7F5;
+border-left:0 solid transparent;
+right:0;
+bottom:0;
+position:absolute;
+z-index:99;
+}
+
+form#create {
+height:32px;
+width:240px;
+position:relative;
+border-radius:3px;
+}
+
+form#create input {
+font-family:Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size:12px;
+font-weight:600;
+text-transform:uppercase;
+}
+
+form#create .link {
+position:relative;
+width:100%;
+height:100%;
+color:#FAF7F5;
+border:1px solid #FAF7F5;
+background:none;
+border-radius:3px;
+padding:0 92px 0 12px;
+}
+
+form#create .submit {
+height:100%;
+width:auto;
+position:absolute;
+right:0;
+top:0;
+cursor:pointer;
+border-radius:0 3px 3px 0;
+line-height:32px;
+letter-spacing:1px;
+text-transform:uppercase;
+font-weight:600;
+background:#FAF7F5;
+color:#E65069;
+padding:0 12px;
+}
+
+#more {
+width:100%;
+background:#FAF7F5;
+position:relative;
+}
+
+#more .stripe {
+bottom:auto;
+}
+
+#more h3 {
+font-size:20px;
+line-height:32px;
+font-weight:500;
+color:rgba(0,0,0,0.64);
+margin-bottom:8px;
+}
+
+#more p {
+color:rgba(0,0,0,0.48);
+font-size:14px;
+line-height:24px;
+margin-bottom:24px;
+}
+
+#twitter-widget-0 {
+display:block;
+margin:32px auto 0;
+}
+
+#upload {
+width:100%;
+height:100%;
+position:relative;
+cursor:pointer;
+z-index:2;
+}
+
+#uploader {
+z-index:-1;
+}
+
+#uploader #balloon {
+width:148px;
+height:256px;
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+margin:auto;
+}
+
+#uploader .container {
+width:148px;
+height:256px;
+position:relative;
+}
+
+#uploader #balloon .balloon,#uploader #balloon .fill {
+width:148px;
+height:256px;
+background-size:148px 256px;
+background-repeat:no-repeat;
+position:absolute;
+top:0;
+left:0;
+-webkit-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-moz-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-ms-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-o-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+transition:all 2s cubic-bezier(0.48,0,0.16,1);
+}
+
+#uploader #balloon .fill .filler {
+background:#FAF7F5;
+width:100%;
+height:0;
+position:absolute;
+bottom:0;
+z-index:-1;
+-webkit-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-moz-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-ms-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-o-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+transition:all 2s cubic-bezier(0.48,0,0.16,1);
+}
+
+#uploader .balloon.waiting {
+background-image:url(/assets/balloon-waiting.png);
+}
+
+#uploader .balloon.mask {
+background-image:url(/assets/balloon-mask.png);
+}
+
+.dropzone.dz-drag-hover {
+background:rgba(0,0,0,0.48);
+}
+
+.dropzone-previews {
+width:100%;
+background:#FAF7F5;
+display:none;
+padding:64px 0;
+}
+
+.dropzone-previews .dz-preview {
+position:relative;
+display:block;
+height:56px;
+line-height:56px;
+width:480px;
+background:rgba(0,0,0,0.24);
+border-radius:3px;
+margin:0 auto 24px;
+}
+
+.dropzone-previews .dz-preview:first-of-type {
+margin-top:64px;
+}
+
+.dropzone-previews .dz-preview img {
+float:left;
+width:56px;
+height:56px;
+display:none;
+border-radius:3px 0 0 3px;
+margin:0 24px 0 -24px;
+}
+
+.dropzone-previews .dz-preview h3 {
+float:left;
+font-size:16px;
+font-weight:500;
+width:70%;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+color:#fff;
+}
+
+.dropzone-previews .dz-preview.dz-error h3 {
+color:#e54322;
+}
+
+.dropzone-previews .dz-details .more {
+position:relative;
+z-index:2;
+}
+
+.dropzone-previews .dz-details,.dropzone-previews .dz-upload {
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+border-radius:3px;
+}
+
+.dropzone-previews .dz-details {
+padding:0 24px;
+}
+
+.dropzone-previews .dz-upload {
+overflow:hidden;
+width:0;
+z-index:1;
+background-color:#E65069;
+height:100%;
+-webkit-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-moz-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-ms-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+-o-transition:all 2s cubic-bezier(0.48,0,0.16,1);
+transition:all 2s cubic-bezier(0.48,0,0.16,1);
+}
+
+.dropzone-previews .dz-upload .uploading {
+display:block;
+position:absolute;
+right:24px;
+top:18px;
+height:20px;
+width:20px;
+background-image:url(/assets/uploading.gif);
+background-size:20px 20px;
+background-repeat:no-repeat;
+}
+
+.dropzone-previews .dz-upload .check {
+display:none;
+position:absolute;
+right:24px;
+top:21px;
+height:14px;
+width:20px;
+background-image:url(/assets/check-light.png);
+background-size:20px 14px;
+background-repeat:no-repeat;
+}
+
+a {
+color:inherit;
+}
+
+.buckets.index,.buckets.new,.buckets.edit,.buckets.create {
+background:#FAF7F5;
+}
+
+#buckets #logo {
+width:64px;
+margin:0 0 12px -12px;
+}
+
+#buckets .bucket {
+position:relative;
+display:block;
+height:56px;
+line-height:56px;
+width:480px;
+background:#E65069;
+border-radius:3px;
+margin:0 auto 24px;
+padding:0 24px;
+}
+
+#buckets .bucket h3 {
+float:left;
+font-size:16px;
+font-weight:500;
+width:50%;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+color:#fff;
+}
+
+#buckets .bucket .actions {
+float:right;
+width:50%;
+text-align:right;
+font-size:0;
+}
+
+#buckets .bucket .actions li {
+display:inline-block;
+margin-left:16px;
+}
+
+#buckets .bucket .actions li a {
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+font-weight:500;
+color:rgba(255,255,255,0.64);
+}
+
+#buckets .buttons li.border {
+border:1px solid #E65069;
+color:#E65069;
+}
+
+form #buckets .bucket {
+background:rgba(0,0,0,0.12);
+}
+
+#error_explanation {
+border:1px solid #E65069;
+border-radius:3px;
+margin-bottom:24px;
+color:rgba(0,0,0,0.64);
+font-size:14px;
+line-height:20px;
+padding:24px;
+}
+
+#error_explanation h2 {
+font-size:18px;
+}
+
+#buckets input[type=text] {
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size:16px;
+font-weight:500;
+color:rgba(0,0,0,0.64);
+background:transparent;
+width:100%;
+}
+
+#buckets input[type=submit] {
+display:block;
+font-size:12px;
+line-height:32px;
+letter-spacing:1px;
+text-transform:uppercase;
+font-weight:600;
+cursor:pointer;
+color:#FAF7F5;
+background:#E65069;
+border-radius:3px;
+padding:0 24px;
+}
+
+::-webkit-input-placeholder,::-moz-placeholder,:-ms-input-placeholder,input:-moz-placeholder {
+color:rgba(255,255,255,0.48);
+}
+
+#more p:last-of-type,.dropzone-previews .dz-preview:last-of-type {
+margin-bottom:0;
+}
+
+#upload input,.dz-started #uploader,.dz-default.dz-message,.dropzone-previews .dz-complete .dz-upload .uploading {
+display:none;
+}
+
+.dropzone-previews.show,.dropzone-previews .dz-preview.dz-image-preview img,.dropzone-previews .dz-complete .dz-upload .check {
+display:block;
+}
+
+@media screen and max-width 608px{
+.inner {
+padding:32px;
+}
+
+#buckets .bucket,.dropzone-previews .dz-preview {
+width:100%;
+}
+
+.dropzone-previews {
+padding:64px 32px;
+}
+}
